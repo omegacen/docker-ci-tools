@@ -37,4 +37,3 @@ $ ssh-addkey "${SSH_PRIVATE_KEY}"
 ```
 where the `SSH_PRIVATE_KEY` variable contains your private key. You can then
 either ssh, rsync, or use git to sync to your favorite deploy server.
-
