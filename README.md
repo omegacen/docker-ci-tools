@@ -8,6 +8,7 @@ List of tools installed:
   * openssh-client
   * rsync
   * s-nail
+  * gettext  
   * curl
   * jq
   * black

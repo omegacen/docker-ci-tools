@@ -9,6 +9,7 @@ RUN apt-get update && apt-get -y install \
     jq \
     rsync \
     s-nail \
+    gettext \
     && apt-get clean
 # Install via pip
 RUN pip install \
