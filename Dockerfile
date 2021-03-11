@@ -28,6 +28,7 @@ RUN git clone https://gitlab.astro-wise.org/omegacen/git-scripts.git ~/git-scrip
 RUN mkdir -p ~/.ssh
 RUN echo "Host *\n\tStrictHostKeyChecking no" > ~/.ssh/config
 COPY ssh-addkey.sh /usr/bin/ssh-addkey
+COPY python-gitlab-set-private-token.sh /usr/bin/python-gitlab-set-private-token
 
 COPY entrypoint.sh /usr/bin/entrypoint
 ENTRYPOINT [ "/bin/bash", "/usr/bin/entrypoint" ]
