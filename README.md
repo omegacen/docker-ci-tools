@@ -13,6 +13,7 @@ List of tools installed:
   * jq
   * black
   * autopep8
+  * release-cli  
   * python-gitlab
   * python-compare-ast
   * coverage-fixpaths  
