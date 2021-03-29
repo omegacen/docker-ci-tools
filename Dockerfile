@@ -19,17 +19,21 @@ RUN pip install \
     python-compare-ast \
     coverage-fixpaths
 
+# Install Gitlab release-cli
+RUN curl --location --output /usr/local/bin/release-cli "https://release-cli-downloads.s3.amazonaws.com/latest/release-cli-linux-amd64" \
+    && chmod +x /usr/local/bin/release-cli
+
 # Install git-scripts
 RUN git clone https://gitlab.astro-wise.org/omegacen/git-scripts.git ~/git-scripts \
-    && mv ~/git-scripts/bin/* /usr/bin/ \
+    && mv ~/git-scripts/bin/* /usr/local/bin/ \
     && rm -rf ~/git-scripts
 
 # Install ssh-addkey
 RUN mkdir -p ~/.ssh
 RUN echo "Host *\n\tStrictHostKeyChecking no" > ~/.ssh/config
-COPY ssh-addkey.sh /usr/bin/ssh-addkey
-COPY python-gitlab-set-private-token.sh /usr/bin/python-gitlab-set-private-token
+COPY ssh-addkey.sh /usr/local/bin/ssh-addkey
+COPY python-gitlab-set-private-token.sh /usr/local/bin/python-gitlab-set-private-token
 
-COPY entrypoint.sh /usr/bin/entrypoint
-ENTRYPOINT [ "/bin/bash", "/usr/bin/entrypoint" ]
+COPY entrypoint.sh /usr/local/bin/entrypoint
+ENTRYPOINT [ "/bin/bash", "/usr/local/bin/entrypoint" ]
 CMD [ "/bin/bash" ]
