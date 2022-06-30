@@ -2,6 +2,8 @@
 
 Various tools and utilities that come in handy during (GitLab) CI jobs.
 
+Superseded by https://gitlab.astro-wise.org/omegacen/ci-templates/-/tree/master/dockerfiles/ci-tools.
+
 List of tools installed:
 
   * git
